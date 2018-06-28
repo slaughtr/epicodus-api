@@ -1,0 +1,17 @@
+{
+  "name": "scrapepokemondata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "rm -rf node_modules && npm install && rm -f package-lock.json && zip -r scrapePokemonData.zip ../scrapePokemonData/ && aws lambda update-function-code --function-name=scrapePokemonData --zip-file=fileb://scrapePokemonData.zip --publish && rm scrapePokemonData.zip"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "request": "^2.87.0",
+    "request-promise-native": "^1.0.5"
+  }
+}
